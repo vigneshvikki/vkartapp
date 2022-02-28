@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <h3>Login</h3>
+        <form>
+            <div class="mb-3">
+              <label for="loginUsername" class="form-label">Username</label>
+              <input type="email" class="form-control" id="loginUsername" placeholder="Enter Username">             
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="loginPassword" placeholder="Enter Password">
+            </div>
+            <div class="mb-3 form-check">
+              <a [routerLink]="['/reset_password']">Reset Password</a>
+            </div>
+            <button type="submit" class="btn btn-primary">Login <i class="fa-solid fa-right-to-bracket"></i></button>
+          </form>
+    </div>
+</div>
