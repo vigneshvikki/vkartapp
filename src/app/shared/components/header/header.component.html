@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><i class="fa-solid fa-cart-shopping"></i> VKART</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ">
           <!--<li class="nav-item">
             <a class="nav-link" [routerLink]="['login']" routerLinkActive="active" >Login</a>
           </li>
@@ -14,7 +14,18 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['reset_password']" routerLinkActive="active" >Forgot Password</a>
-          </li>-->
+          </li>-->    
+          <li class="nav-item dropdown" *ngIf="authService.IsLoggedIn();" dropdown>
+            <a class="nav-link dropdown-toggle"  dropdownToggle  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{authService.getUserName()}}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="#">Change Password</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" (click)="authService.LogOut();" href="javascript::void(0)"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
