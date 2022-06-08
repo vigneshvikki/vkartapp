@@ -1,56 +1,49 @@
 <p>Products</p>
+<div class="row" >
+  <div class="card mb-3"  *ngFor="let product of products">
+    <!-- <div class="row g-0">
+      <div class="col-md-2">
+        <img src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" width="200px" class="img-fluid rounded-start"
+          alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><a [routerLink]="['/product/view',product.id]"> {{product.product_name}}</a>
+           </h5>
+          <p class="card-text">{{product.product_desc}}</p>
+          <p class="card-text"><small class="text-muted">{{product.product_price}}</small></p>
+        </div>
+      </div>
+    </div> -->
+    <div class="p-4 mb-4">
+      <div class="row g-4">
+          <div class="col-sm-12 col-md-8 d-flex align-items-center">
+              <img class="flex-shrink-0 img-fluid border rounded" src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" style="width: 100px; height: 100px;">
+              <div class="text-start ps-4">
+                  <h5 class="mb-3"><a [routerLink]="['/product/view',product.id]"> {{product.product_name}}</a></h5>
+                  <p class="card-text">{{product.product_desc}}</p>
+                  <p class="card-text"><small class="text-muted">{{product.product_price | currency}}</small></p>
+                </div>
+          </div>
+          <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+              <div class="d-flex mb-3">
+                  <a class="btn btn-light btn-square me-3" href=""><i class="fa fa-plus-circle" aria-hidden="true"></i>
+                  </a>
+                  <a class="btn btn-primary" href="">ENQUIRY NOW</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</div>
 <div class="row">
-<div class="card mb-3" style="max-width: 640px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mb-3" style="max-width: 640px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div class="row">
-    <nav aria-label="...">
-        <ul class="pagination pagination-lg">
-          <li class="page-item active" aria-current="page">
-            <span class="page-link">1</span>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-        </ul>
-      </nav>
-  </div>
+  <nav aria-label="...">
+    <ul class="pagination pagination-lg">
+      <li class="page-item active" aria-current="page">
+        <span class="page-link">1</span>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+    </ul>
+  </nav>
+</div>

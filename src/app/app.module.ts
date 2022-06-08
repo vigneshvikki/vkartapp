@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { ValueComponent } from './value/value.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductsModule } from './products/products.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductsModule } from './products/products.module';
     HttpClientModule,
     SharedModule,
     AuthModule,
-    ProductsModule
+    ProductsModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

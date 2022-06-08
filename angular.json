@@ -27,7 +27,6 @@
               "src/assets"
             ],
             "styles": [
-              "../VKARTAPP/node_modules/bootstrap/scss/bootstrap.scss",
               "../VKARTAPP/node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
               "../VKARTAPP/node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
               "../VKARTAPP/node_modules/@fortawesome/fontawesome-free/scss/solid.scss",

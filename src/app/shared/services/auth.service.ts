@@ -2,19 +2,21 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { tokenize } from '@angular/compiler/src/ml_parser/lexer';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  authUrl = "http://localhost/shopping/public/api/";
+  authUrl = environment['apiBaseUrl'];
   userInfo:any;  
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
  }
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private router: Router) { }
   
   login(model:any)
   {
@@ -23,13 +25,13 @@ export class AuthService {
         const result = response;
         if(result.status=="Success")
         {
-          console.log(result.data.userdata.name);
-          localStorage.setItem('token',result.data.token);
-          localStorage.setItem('userdata',result.data.userdata);
-          localStorage.setItem('username',result.data.userdata.name);
+          console.log(result.data.user_name);
+          localStorage.setItem('token',result.token);
+          localStorage.setItem('userdata',result.data);
+          localStorage.setItem('username',result.data.user_name);
         }
         else{
-          console.log(result.error);
+          console.log(result);
         }
 
       }
@@ -53,9 +55,11 @@ export class AuthService {
   }
   clearData() {
     localStorage.clear();
+    localStorage.removeItem('token');
   }
   LogOut()
   {
-     localStorage.removeItem('token');
+    this.clearData();
+    this.router.navigate(['/']);
   }
 }
